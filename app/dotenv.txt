@@ -1,0 +1,2 @@
+MONGODB_URI = <AtlasDB_URI>
+JWT_SECRET = MySecretBlog

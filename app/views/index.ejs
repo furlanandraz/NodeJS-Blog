@@ -1,0 +1,28 @@
+<div class="author">
+    <h1 class="author__heading">Hi, I'm Andraz</h1>
+    <p class="author_body">Web developer and content creator</p>
+</div>
+
+<img
+    src="https://img.freepik.com/free-photo/beautiful-milky-way-night-sky_53876-139825.jpg?w=1380&t=st=1716363731~exp=1716364331~hmac=c130b31bd4bf87894cd11dbea33f9870116c0b8ad1449f89af68a2887d024f16"
+    alt="night sky" class="hero-image">
+
+<section class="articles">
+    <h2 class="articles__heading">Latest Posts</h2>
+    <ul class="article-ul">
+        <% data.forEach(post => { %>
+        <li>
+            <a href="/post/<%= post._id %>">
+                <span><%= post.title %></span>
+                <span class="article-list__date"><%=
+                    post.createdAt.toDateString() %></span>
+            </a>
+        </li>
+        <% }); %>
+    </ul>
+
+    <% if (nextPage) { %>
+    <a href="/?page=<%= nextPage %>" class="pagination">&lt; Older</a>
+    <% } %>
+
+</section>
